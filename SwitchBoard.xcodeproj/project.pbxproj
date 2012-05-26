@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A69C1931570F16700AB0E8D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A69C1921570F16700AB0E8D /* UIKit.framework */; };
+		7A69C1951570F16700AB0E8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A69C1941570F16700AB0E8D /* Foundation.framework */; };
+		7A69C1971570F16700AB0E8D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A69C1961570F16700AB0E8D /* CoreGraphics.framework */; };
+		7A69C1991570F16700AB0E8D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A69C1981570F16700AB0E8D /* CoreData.framework */; };
+		7A69C19F1570F16700AB0E8D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A69C19D1570F16700AB0E8D /* InfoPlist.strings */; };
+		7A69C1A11570F16700AB0E8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1A01570F16700AB0E8D /* main.m */; };
+		7A69C1A51570F16700AB0E8D /* SBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1A41570F16700AB0E8D /* SBAppDelegate.m */; };
+		7A69C1A81570F16700AB0E8D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A69C1A61570F16700AB0E8D /* MainStoryboard.storyboard */; };
+		7A69C1AB1570F16700AB0E8D /* SwitchBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1A91570F16700AB0E8D /* SwitchBoard.xcdatamodeld */; };
+		7A69C1AE1570F16700AB0E8D /* SBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1AD1570F16700AB0E8D /* SBMasterViewController.m */; };
+		7A69C1B11570F16700AB0E8D /* SBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7A69C18E1570F16700AB0E8D /* SwitchBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitchBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A69C1921570F16700AB0E8D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7A69C1941570F16700AB0E8D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7A69C1961570F16700AB0E8D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7A69C1981570F16700AB0E8D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7A69C19C1570F16700AB0E8D /* SwitchBoard-Info.plist */ = {isa = PBXFileReference; path = "SwitchBoard-Info.plist"; sourceTree = "<group>"; };
+		7A69C19E1570F16700AB0E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A69C1A01570F16700AB0E8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A69C1A21570F16700AB0E8D /* SwitchBoard-Prefix.pch */ = {isa = PBXFileReference; path = "SwitchBoard-Prefix.pch"; sourceTree = "<group>"; };
+		7A69C1A31570F16700AB0E8D /* SBAppDelegate.h */ = {isa = PBXFileReference; path = SBAppDelegate.h; sourceTree = "<group>"; };
+		7A69C1A41570F16700AB0E8D /* SBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBAppDelegate.m; sourceTree = "<group>"; };
+		7A69C1A71570F16700AB0E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7A69C1AA1570F16700AB0E8D /* SwitchBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwitchBoard.xcdatamodel; sourceTree = "<group>"; };
+		7A69C1AC1570F16700AB0E8D /* SBMasterViewController.h */ = {isa = PBXFileReference; path = SBMasterViewController.h; sourceTree = "<group>"; };
+		7A69C1AD1570F16700AB0E8D /* SBMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBMasterViewController.m; sourceTree = "<group>"; };
+		7A69C1AF1570F16700AB0E8D /* SBDetailViewController.h */ = {isa = PBXFileReference; path = SBDetailViewController.h; sourceTree = "<group>"; };
+		7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A69C18B1570F16700AB0E8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A69C1931570F16700AB0E8D /* UIKit.framework in Frameworks */,
+				7A69C1951570F16700AB0E8D /* Foundation.framework in Frameworks */,
+				7A69C1971570F16700AB0E8D /* CoreGraphics.framework in Frameworks */,
+				7A69C1991570F16700AB0E8D /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A69C1831570F16700AB0E8D = {
+			isa = PBXGroup;
+			children = (
+				7A69C19A1570F16700AB0E8D /* SwitchBoard */,
+				7A69C1911570F16700AB0E8D /* Frameworks */,
+				7A69C18F1570F16700AB0E8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A69C18F1570F16700AB0E8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A69C18E1570F16700AB0E8D /* SwitchBoard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A69C1911570F16700AB0E8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A69C1921570F16700AB0E8D /* UIKit.framework */,
+				7A69C1941570F16700AB0E8D /* Foundation.framework */,
+				7A69C1961570F16700AB0E8D /* CoreGraphics.framework */,
+				7A69C1981570F16700AB0E8D /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A69C19A1570F16700AB0E8D /* SwitchBoard */ = {
+			isa = PBXGroup;
+			children = (
+				7A69C1A31570F16700AB0E8D /* SBAppDelegate.h */,
+				7A69C1A41570F16700AB0E8D /* SBAppDelegate.m */,
+				7A69C1A61570F16700AB0E8D /* MainStoryboard.storyboard */,
+				7A69C1AC1570F16700AB0E8D /* SBMasterViewController.h */,
+				7A69C1AD1570F16700AB0E8D /* SBMasterViewController.m */,
+				7A69C1AF1570F16700AB0E8D /* SBDetailViewController.h */,
+				7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */,
+				7A69C1A91570F16700AB0E8D /* SwitchBoard.xcdatamodeld */,
+				7A69C19B1570F16700AB0E8D /* Supporting Files */,
+			);
+			path = SwitchBoard;
+			sourceTree = "<group>";
+		};
+		7A69C19B1570F16700AB0E8D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A69C19C1570F16700AB0E8D /* SwitchBoard-Info.plist */,
+				7A69C19D1570F16700AB0E8D /* InfoPlist.strings */,
+				7A69C1A01570F16700AB0E8D /* main.m */,
+				7A69C1A21570F16700AB0E8D /* SwitchBoard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A69C18D1570F16700AB0E8D /* SwitchBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A69C1B41570F16700AB0E8D /* Build configuration list for PBXNativeTarget "SwitchBoard" */;
+			buildPhases = (
+				7A69C18A1570F16700AB0E8D /* Sources */,
+				7A69C18B1570F16700AB0E8D /* Frameworks */,
+				7A69C18C1570F16700AB0E8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwitchBoard;
+			productName = SwitchBoard;
+			productReference = 7A69C18E1570F16700AB0E8D /* SwitchBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A69C1851570F16700AB0E8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SB;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 7A69C1881570F16700AB0E8D /* Build configuration list for PBXProject "SwitchBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7A69C1831570F16700AB0E8D;
+			productRefGroup = 7A69C18F1570F16700AB0E8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A69C18D1570F16700AB0E8D /* SwitchBoard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A69C18C1570F16700AB0E8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A69C19F1570F16700AB0E8D /* InfoPlist.strings in Resources */,
+				7A69C1A81570F16700AB0E8D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A69C18A1570F16700AB0E8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A69C1A11570F16700AB0E8D /* main.m in Sources */,
+				7A69C1A51570F16700AB0E8D /* SBAppDelegate.m in Sources */,
+				7A69C1AB1570F16700AB0E8D /* SwitchBoard.xcdatamodeld in Sources */,
+				7A69C1AE1570F16700AB0E8D /* SBMasterViewController.m in Sources */,
+				7A69C1B11570F16700AB0E8D /* SBDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7A69C19D1570F16700AB0E8D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A69C19E1570F16700AB0E8D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7A69C1A61570F16700AB0E8D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A69C1A71570F16700AB0E8D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A69C1B21570F16700AB0E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7A69C1B31570F16700AB0E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A69C1B51570F16700AB0E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SwitchBoard/SwitchBoard-Prefix.pch";
+				INFOPLIST_FILE = "SwitchBoard/SwitchBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7A69C1B61570F16700AB0E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SwitchBoard/SwitchBoard-Prefix.pch";
+				INFOPLIST_FILE = "SwitchBoard/SwitchBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A69C1881570F16700AB0E8D /* Build configuration list for PBXProject "SwitchBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A69C1B21570F16700AB0E8D /* Debug */,
+				7A69C1B31570F16700AB0E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A69C1B41570F16700AB0E8D /* Build configuration list for PBXNativeTarget "SwitchBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A69C1B51570F16700AB0E8D /* Debug */,
+				7A69C1B61570F16700AB0E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A69C1A91570F16700AB0E8D /* SwitchBoard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A69C1AA1570F16700AB0E8D /* SwitchBoard.xcdatamodel */,
+			);
+			currentVersion = 7A69C1AA1570F16700AB0E8D /* SwitchBoard.xcdatamodel */;
+			path = SwitchBoard.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7A69C1851570F16700AB0E8D /* Project object */;
+}
