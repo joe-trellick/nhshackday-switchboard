@@ -18,6 +18,8 @@
 		7A69C1AB1570F16700AB0E8D /* SwitchBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1A91570F16700AB0E8D /* SwitchBoard.xcdatamodeld */; };
 		7A69C1AE1570F16700AB0E8D /* SBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1AD1570F16700AB0E8D /* SBMasterViewController.m */; };
 		7A69C1B11570F16700AB0E8D /* SBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */; };
+		7ABDC1161570FA8C008F6C9F /* SBEntityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDC1151570FA8C008F6C9F /* SBEntityUtil.m */; };
+		7ABDC119157121D2008F6C9F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ABDC118157121D2008F6C9F /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,18 +28,21 @@
 		7A69C1941570F16700AB0E8D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7A69C1961570F16700AB0E8D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7A69C1981570F16700AB0E8D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7A69C19C1570F16700AB0E8D /* SwitchBoard-Info.plist */ = {isa = PBXFileReference; path = "SwitchBoard-Info.plist"; sourceTree = "<group>"; };
+		7A69C19C1570F16700AB0E8D /* SwitchBoard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwitchBoard-Info.plist"; sourceTree = "<group>"; };
 		7A69C19E1570F16700AB0E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A69C1A01570F16700AB0E8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7A69C1A21570F16700AB0E8D /* SwitchBoard-Prefix.pch */ = {isa = PBXFileReference; path = "SwitchBoard-Prefix.pch"; sourceTree = "<group>"; };
-		7A69C1A31570F16700AB0E8D /* SBAppDelegate.h */ = {isa = PBXFileReference; path = SBAppDelegate.h; sourceTree = "<group>"; };
+		7A69C1A21570F16700AB0E8D /* SwitchBoard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwitchBoard-Prefix.pch"; sourceTree = "<group>"; };
+		7A69C1A31570F16700AB0E8D /* SBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBAppDelegate.h; sourceTree = "<group>"; };
 		7A69C1A41570F16700AB0E8D /* SBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBAppDelegate.m; sourceTree = "<group>"; };
 		7A69C1A71570F16700AB0E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7A69C1AA1570F16700AB0E8D /* SwitchBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwitchBoard.xcdatamodel; sourceTree = "<group>"; };
-		7A69C1AC1570F16700AB0E8D /* SBMasterViewController.h */ = {isa = PBXFileReference; path = SBMasterViewController.h; sourceTree = "<group>"; };
+		7A69C1AC1570F16700AB0E8D /* SBMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBMasterViewController.h; sourceTree = "<group>"; };
 		7A69C1AD1570F16700AB0E8D /* SBMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBMasterViewController.m; sourceTree = "<group>"; };
-		7A69C1AF1570F16700AB0E8D /* SBDetailViewController.h */ = {isa = PBXFileReference; path = SBDetailViewController.h; sourceTree = "<group>"; };
+		7A69C1AF1570F16700AB0E8D /* SBDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBDetailViewController.h; sourceTree = "<group>"; };
 		7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBDetailViewController.m; sourceTree = "<group>"; };
+		7ABDC1141570FA8C008F6C9F /* SBEntityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEntityUtil.h; sourceTree = "<group>"; };
+		7ABDC1151570FA8C008F6C9F /* SBEntityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBEntityUtil.m; sourceTree = "<group>"; };
+		7ABDC118157121D2008F6C9F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,9 @@
 				7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */,
 				7A69C1A91570F16700AB0E8D /* SwitchBoard.xcdatamodeld */,
 				7A69C19B1570F16700AB0E8D /* Supporting Files */,
+				7ABDC1141570FA8C008F6C9F /* SBEntityUtil.h */,
+				7ABDC1151570FA8C008F6C9F /* SBEntityUtil.m */,
+				7ABDC118157121D2008F6C9F /* Settings.bundle */,
 			);
 			path = SwitchBoard;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 			files = (
 				7A69C19F1570F16700AB0E8D /* InfoPlist.strings in Resources */,
 				7A69C1A81570F16700AB0E8D /* MainStoryboard.storyboard in Resources */,
+				7ABDC119157121D2008F6C9F /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +187,7 @@
 				7A69C1AB1570F16700AB0E8D /* SwitchBoard.xcdatamodeld in Sources */,
 				7A69C1AE1570F16700AB0E8D /* SBMasterViewController.m in Sources */,
 				7A69C1B11570F16700AB0E8D /* SBDetailViewController.m in Sources */,
+				7ABDC1161570FA8C008F6C9F /* SBEntityUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +299,7 @@
 				7A69C1B61570F16700AB0E8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

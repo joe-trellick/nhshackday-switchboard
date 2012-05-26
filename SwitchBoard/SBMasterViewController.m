@@ -3,12 +3,14 @@
 //  SwitchBoard
 //
 //  Created by Joe Hughes on 5/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "SBMasterViewController.h"
 
 #import "SBDetailViewController.h"
+#import "SBEntityUtil.h"
+
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface SBMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -28,16 +30,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-  self.navigationItem.leftBarButtonItem = self.editButtonItem;
+  //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
+  uiBusy = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+  uiBusy.hidesWhenStopped = YES;
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:uiBusy];
+  
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
   self.navigationItem.rightBarButtonItem = addButton;
+
+  NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+  [defaults synchronize];
+  NSString *serverAddress = [defaults valueForKey:@"server_preference"];
+  NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%@/bleeps?querykey=whatever", serverAddress]];
+  NSLog(@"Trying Server URL: %@", url);
+  [uiBusy startAnimating];
+  dispatch_async(kBgQueue, ^{
+    NSData* data = [NSData dataWithContentsOfURL:url];
+    [self performSelectorOnMainThread:@selector(fetchedData:) 
+                           withObject:data waitUntilDone:YES];
+  });
 }
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+  [super viewDidUnload];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -45,24 +63,110 @@
   return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (void)fetchedData:(NSData *)responseData {
+  [uiBusy stopAnimating];
+  if (!responseData) {
+    return;
+  }
+  NSLog(@"Got server response");
+  
+  //parse out the json data
+  NSError* error;
+  id jsonResponse = [NSJSONSerialization 
+                        JSONObjectWithData:responseData //1
+                        
+                        options:kNilOptions 
+                        error:&error];
+  
+  if ([jsonResponse isKindOfClass:[NSDictionary class]]) {
+    NSDictionary *jsonDictionary = (NSDictionary *)jsonResponse;
+    if ([jsonDictionary count] > 0) {
+      [self deleteAllObjects:@"Person"];
+      for (NSString *key in [jsonDictionary keyEnumerator]) {
+        NSDictionary *jsonEntry = [jsonDictionary valueForKey:key];
+        if (![jsonEntry isKindOfClass:[NSDictionary class]]) {
+          continue;
+        }
+        [self insertObjectFromJSON:jsonEntry];
+      }
+    }
+  } else if ([jsonResponse isKindOfClass:[NSArray class]]) {
+    NSArray *jsonArray = (NSArray *)jsonResponse;
+    if ([jsonArray count] > 0 && [[jsonArray objectAtIndex:0] isKindOfClass:[NSDictionary class]]) {
+      [self deleteAllObjects:@"Person"];
+      for (NSDictionary *jsonEntry in jsonArray) {
+        if (![jsonEntry isKindOfClass:[NSDictionary class]]) {
+          continue;
+        }
+        [self insertObjectFromJSON:jsonEntry];
+      }
+    }
+  }
+}
+
+- (void)insertObjectFromJSON:(NSDictionary *)jsonObject
+{
+  NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+  NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+  NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+  
+  // If appropriate, configure the new managed object.
+  // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+  [newManagedObject setValue:[jsonObject objectForKey:@"first_name"] forKey:@"firstName"];
+  [newManagedObject setValue:[jsonObject objectForKey:@"last_name"] forKey:@"lastName"];
+  [newManagedObject setValue:[jsonObject objectForKey:@"phone"] forKey:@"number"];
+  [newManagedObject setValue:[jsonObject objectForKey:@"email"] forKey:@"email"];
+  
+  // Save the context.
+  NSError *error = nil;
+  if (![context save:&error]) {
+    // Replace this implementation with code to handle the error appropriately.
+    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    abort();
+  }
+}
+
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+  NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:context];
+  [fetchRequest setEntity:entity];
+  
+  NSError *error;
+  NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
+  
+  
+  for (NSManagedObject *managedObject in items) {
+    [context deleteObject:managedObject];
+  }
+  if (![context save:&error]) {
+    NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+  }
+  
+}
+
 - (void)insertNewObject:(id)sender
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-         // Replace this implementation with code to handle the error appropriately.
-         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+  NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+  NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+  NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+  
+  // If appropriate, configure the new managed object.
+  // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+  [newManagedObject setValue:@"Firstname" forKey:@"firstName"];
+  [newManagedObject setValue:@"Lastname" forKey:@"lastName"];
+  [newManagedObject setValue:@"721 3128" forKey:@"number"];
+  [newManagedObject setValue:@"a@b.com" forKey:@"email"];
+  
+  // Save the context.
+  NSError *error = nil;
+  if (![context save:&error]) {
+     // Replace this implementation with code to handle the error appropriately.
+     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    abort();
+  }
 }
 
 #pragma mark - Table View
@@ -132,15 +236,16 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    NSSortDescriptor *firstNameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    NSSortDescriptor *lastNameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:lastNameSortDescriptor, firstNameSortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
@@ -223,8 +328,9 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+  NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+  cell.textLabel.text = [SBEntityUtil titleForEntry:object];
+  cell.detailTextLabel.text = [[object valueForKey:@"number"] description];
 }
 
 @end

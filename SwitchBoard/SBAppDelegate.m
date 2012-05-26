@@ -3,7 +3,6 @@
 //  SwitchBoard
 //
 //  Created by Joe Hughes on 5/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "SBAppDelegate.h"
@@ -19,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // Register the preference defaults early.
+  NSDictionary *appDefaults = [NSDictionary
+                               dictionaryWithObject:@"http://192.168.48.54:8080" forKey:@"server_preference"];
+  [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+  
     // Override point for customization after application launch.
   UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
   SBMasterViewController *controller = (SBMasterViewController *)navigationController.topViewController;
