@@ -20,6 +20,8 @@
 		7A69C1B11570F16700AB0E8D /* SBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A69C1B01570F16700AB0E8D /* SBDetailViewController.m */; };
 		7ABDC1161570FA8C008F6C9F /* SBEntityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDC1151570FA8C008F6C9F /* SBEntityUtil.m */; };
 		7ABDC119157121D2008F6C9F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ABDC118157121D2008F6C9F /* Settings.bundle */; };
+		A5B1BE68157261C300C6F92C /* switchboard2-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B1BE66157261C300C6F92C /* switchboard2-iphone.png */; };
+		A5B1BE69157261C300C6F92C /* switchboard2-iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B1BE67157261C300C6F92C /* switchboard2-iphone4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		7ABDC1141570FA8C008F6C9F /* SBEntityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEntityUtil.h; sourceTree = "<group>"; };
 		7ABDC1151570FA8C008F6C9F /* SBEntityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBEntityUtil.m; sourceTree = "<group>"; };
 		7ABDC118157121D2008F6C9F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A5B1BE66157261C300C6F92C /* switchboard2-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchboard2-iphone.png"; sourceTree = "<group>"; };
+		A5B1BE67157261C300C6F92C /* switchboard2-iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchboard2-iphone4.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		7A69C19B1570F16700AB0E8D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5B1BE66157261C300C6F92C /* switchboard2-iphone.png */,
+				A5B1BE67157261C300C6F92C /* switchboard2-iphone4.png */,
 				7A69C19C1570F16700AB0E8D /* SwitchBoard-Info.plist */,
 				7A69C19D1570F16700AB0E8D /* InfoPlist.strings */,
 				7A69C1A01570F16700AB0E8D /* main.m */,
@@ -172,6 +178,8 @@
 				7A69C19F1570F16700AB0E8D /* InfoPlist.strings in Resources */,
 				7A69C1A81570F16700AB0E8D /* MainStoryboard.storyboard in Resources */,
 				7ABDC119157121D2008F6C9F /* Settings.bundle in Resources */,
+				A5B1BE68157261C300C6F92C /* switchboard2-iphone.png in Resources */,
+				A5B1BE69157261C300C6F92C /* switchboard2-iphone4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
